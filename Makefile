@@ -1,10 +1,10 @@
-all: Node.o Link.o
+all: Vertex.o Edge.o
 
-Node.o: Node.h Node.cpp
-	g++ -g -Wall -c Node.cpp
+Vertex.o: Vertex.h Vertex.cpp
+	g++ -g -Wall -c Vertex.cpp
 
-Link.o: Link.h Link.cpp
-	g++ -g -Wall -c Link.cpp
+Edge.o: Edge.h Edge.cpp
+	g++ -g -Wall -c Edge.cpp
 
 clean:
 	rm *.o *~ *.gch
