@@ -63,9 +63,9 @@ namespace Graph
 	{//Return the ending vertex ID.
 		return endVertexID;
 	}
-}
 
-std::ostream& operator<<(std::ostream &out, const Graph::Edge &e)
+std::ostream& operator<<(std::ostream& out, const Graph::Edge& e)
 {//For stream output.
 	return out << "Weight: " << e.getWeight() << " from vertex " << e.getStartVertex() << " to vertex " << e.getEndVertex() << " ";
+}
 }

@@ -1,6 +1,6 @@
 all: Vertex.o Edge.o
 
-Vertex.o: Vertex.h Vertex.cpp
+Vertex.o: Vertex.cpp
 	g++ -g -Wall -c Vertex.cpp
 
 Edge.o: Edge.h Edge.cpp

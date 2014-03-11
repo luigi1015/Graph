@@ -24,7 +24,7 @@ namespace Graph
 			int getID() const;//Returns the ID;
 			void setValue( T newValue );//Sets the value to the new one.
 			T getValue() const;//Returns the value.
-			template <class Y> friend std::ostream& operator<<(std::ostream &out, const Vertex<Y> &v);//For stream output.
+			//template <class Y> friend std::ostream& operator<<(std::ostream& out, const Vertex<Y>& v);//For stream output.
 	};
 }
 
