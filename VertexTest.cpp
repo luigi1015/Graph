@@ -21,6 +21,26 @@ class VertexTest : public CppUnit::TestCase
 			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
 		}
 
+		void testChangeVertex()
+		{//Basic test of changing vertex values and IDs.
+			//Set up the vertex.
+			Graph::Vertex<int> v(1, 2);
+			
+			//Verify the values.
+			CPPUNIT_ASSERT( v.getID() == 1 );
+			CPPUNIT_ASSERT( v.getValue() == 2 );
+			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
+			
+			//Change the values
+			v.setID( 3 );
+			v.setValue( 4 );
+			
+			//Verify the new values.
+			CPPUNIT_ASSERT( v.getID() == 3 );
+			CPPUNIT_ASSERT( v.getValue() == 4 );
+			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
+		}
+
 		void testVertexWithEdge()
 		{//Basic test of create a vertex with an edge.
 			//Set up the vertex and the edge.
@@ -41,6 +61,7 @@ class VertexTest : public CppUnit::TestCase
 		//Create the test suite using CPPUnit macros.
 		CPPUNIT_TEST_SUITE( VertexTest );
 		CPPUNIT_TEST( testCreateVertex );
+		CPPUNIT_TEST( testChangeVertex );
 		CPPUNIT_TEST( testVertexWithEdge );
 		CPPUNIT_TEST_SUITE_END( );
 };
