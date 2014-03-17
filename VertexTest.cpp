@@ -1,0 +1,62 @@
+#include <cppunit/ui/text/TestRunner.h>
+#include <cppunit/TestCaller.h>
+#include <cppunit/TestCase.h>
+#include <cppunit/extensions/HelperMacros.h>
+#include <iostream>
+#include "Vertex.cpp"
+
+class VertexTest : public CppUnit::TestCase 
+{
+	private:
+		
+	public:
+		void testCreateVertex()
+		{//Basic test of creating a vertex.
+			//Set up the vertex.
+			Graph::Vertex<int> v(1, 2);
+			
+			//Verify the values.
+			CPPUNIT_ASSERT( v.getID() == 1 );
+			CPPUNIT_ASSERT( v.getValue() == 2 );
+			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
+		}
+
+		void testVertexWithEdge()
+		{//Basic test of create a vertex with an edge.
+			//Set up the vertex and the edge.
+			Graph::Edge ed(1, 2, 3);
+			Graph::Vertex<int> v(1, 2);
+			
+			//Verify the vertex has no edges yet.
+			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
+
+			//Add the edge.
+			v.addEdge( ed );
+			
+			//Verfiy the edge has been added.
+			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 1 );
+		}
+		
+		//Create the test suite using CPPUnit macros.
+		CPPUNIT_TEST_SUITE( VertexTest );
+		CPPUNIT_TEST( testCreateVertex );
+		CPPUNIT_TEST( testVertexWithEdge );
+		CPPUNIT_TEST_SUITE_END( );
+};
+
+int main()
+{
+	CPPUNIT_TEST_SUITE_REGISTRATION( VertexTest );
+	CppUnit::TextUi::TestRunner runner;
+	CppUnit::TestFactoryRegistry &registry = CppUnit::TestFactoryRegistry::getRegistry( );
+	runner.addTest( registry.makeTest( ) );
+	if ( runner.run( ) )
+	{//Runner had success.
+		return 0;
+	}
+	else
+	{//Runner failed.
+		return 1;
+	}
+}

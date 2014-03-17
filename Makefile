@@ -2,10 +2,13 @@
 
 all: Vertex.o Edge.o Graph.o BreadthFirstSearch.o
 
-test: EdgeTest
+test: VertexTest EdgeTest
 
 Vertex.o: Vertex.cpp
 	g++ -g -Wall -c Vertex.cpp
+
+VertexTest: Vertex.cpp Vertex.o VertexTest.cpp Edge.o
+	g++ -g -Wall -o VertexTest VertexTest.cpp Edge.o Vertex.o -lcppunit
 
 Edge.o: Edge.h Edge.cpp
 	g++ -g -Wall -c Edge.cpp
