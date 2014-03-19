@@ -44,7 +44,7 @@ class VertexTest : public CppUnit::TestCase
 		void testVertexWithEdge()
 		{//Basic test of create a vertex with an edge.
 			//Set up the vertex and the edge.
-			Graph::Edge ed(1, 2, 3);
+			Graph::Edge ed(1, 1, 2);
 			Graph::Vertex<int> v(1, 2);
 			
 			//Verify the vertex has no edges yet.
@@ -56,6 +56,34 @@ class VertexTest : public CppUnit::TestCase
 			//Verfiy the edge has been added.
 			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
 			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getStartVertex() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getEndVertex() == 2 );
+		}
+
+		void testChangeVertexEdge()
+		{//Basic test of create a vertex with an edge.
+			//Set up the vertex and the edge.
+			Graph::Edge ed(1, 1, 2);
+			Graph::Vertex<int> v(1, 2);
+			
+			//Verify the vertex has no edges yet.
+			CPPUNIT_ASSERT( v.getNumEdges() == 0 );
+
+			//Add the edge.
+			v.addEdge( ed );
+			
+			//Verfiy the edge has been added.
+			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 1 );
+
+			//Change the edge.
+			v.getEdge(0).setWeight(2);
+			
+			//Verfiy the edge has been changed.
+			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 2 );
+			CPPUNIT_ASSERT( v.getEdge(0).getStartVertex() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getEndVertex() == 2 );
 		}
 		
 		//Create the test suite using CPPUnit macros.
