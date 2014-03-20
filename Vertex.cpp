@@ -30,6 +30,7 @@ namespace Graph
 			void setValue( T newValue );//Sets the value to the new one.
 			T getValue() const;//Returns the value.
 			//template <class Y> friend std::ostream& operator<<(std::ostream &out, const Vertex<Y> &v);//For stream output.
+			void changeEdgeWeight( size_t n, int newWeight );//Change the weight of the edge at intex n. The range for n is from 0 to getNumEdges(), inclusive.
 	};
 
 	template <class T> Vertex<T>::Vertex( int newID, T newValue )
@@ -76,6 +77,11 @@ namespace Graph
 	template <class T> T Vertex<T>::getValue() const
 	{//Returns the value.
 		return value;
+	}
+
+	template <class T> void Vertex<T>::changeEdgeWeight( size_t n, int newWeight )
+	{//Change the weight of the edge at intex n. The range for n is from 0 to getNumEdges(), inclusive.
+		edges.at(n).setWeight( newWeight );
 	}
 }
 

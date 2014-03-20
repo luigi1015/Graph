@@ -1,8 +1,8 @@
 .PHONY: all test clean
 
-all: Vertex.o Edge.o Graph.o BreadthFirstSearch.o
+all: Vertex.o Edge.o Graph.o BreadthFirstSearch.o test
 
-test: VertexTest EdgeTest
+test: VertexTest EdgeTest GraphTest
 
 Vertex.o: Vertex.cpp
 	g++ -g -Wall -c Vertex.cpp
@@ -18,6 +18,9 @@ EdgeTest: Edge.h Edge.cpp Edge.o EdgeTest.cpp
 
 Graph.o: Graph.cpp
 	g++ -g -Wall -c Graph.cpp
+
+GraphTest: Graph.cpp Graph.o Vertex.o GraphTest.cpp Edge.o
+	g++ -g -Wall -o GraphTest GraphTest.cpp Graph.o Edge.o Vertex.o -lcppunit
 
 BreadthFirstSearch.o: BreadthFirstSearch.cpp
 	g++ -g -Wall -c BreadthFirstSearch.cpp

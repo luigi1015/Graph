@@ -77,7 +77,8 @@ class VertexTest : public CppUnit::TestCase
 			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 1 );
 
 			//Change the edge.
-			v.getEdge(0).setWeight(2);
+			//v.getEdge(0).setWeight(2);
+			v.changeEdgeWeight( 0, 2 );
 			
 			//Verfiy the edge has been changed.
 			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
@@ -91,6 +92,7 @@ class VertexTest : public CppUnit::TestCase
 		CPPUNIT_TEST( testCreateVertex );
 		CPPUNIT_TEST( testChangeVertex );
 		CPPUNIT_TEST( testVertexWithEdge );
+		CPPUNIT_TEST( testChangeVertexEdge );
 		CPPUNIT_TEST_SUITE_END( );
 };
 

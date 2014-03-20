@@ -13,7 +13,7 @@ namespace Graph
 			std::map<int, Vertex<T> > vertices;
 
 		public:
-			Graph();//Initializes the Graph.
+			//Graph();//Initializes the Graph.
 			void addVertex( int vertexID, T newValue );//Add a vertex.
 			void addVertex( int vertexID, Vertex<T> newVertex );//Add a vertex.
 			void addEdge( int vertexID, Edge newEdge );//Add an edge to a vertex.
@@ -24,10 +24,11 @@ namespace Graph
 			std::vector<int> getVertexIDs() const;//Returns all vertex IDs.
 			void changeVertexID( int oldVertexID, int newVertexID );//Change a vertex's ID.
 	};
-
+/*
 	template <class T> Graph<T>::Graph()
 	{
 	}
+*/
 
 	template <class T> void Graph<T>::addVertex( int newVertexID, T newValue )
 	{//Add a vertex. Throws an exception if vertexID is already in use in the graph.
