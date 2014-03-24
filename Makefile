@@ -29,4 +29,4 @@ TestApp: test.cpp Vertex.o Edge.o BreadthFirstSearch.o
 	g++ -g -Wall -o Test test.cpp Vertex.o Edge.o BreadthFirstSearch.o
 
 clean:
-	rm *.o *~ *.gch Test EdgeTest
+	rm *.o *~ *.gch Test EdgeTest GraphTest VertexTest
