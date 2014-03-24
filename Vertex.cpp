@@ -24,8 +24,8 @@ namespace Graph
 			void addEdge( Edge newEdge );//Add an edge to the list.
 			void clearEdges();//Clears all the edges.
 			size_t getNumEdges() const;//Return the number of edges in the list.
-			Edge& getEdge( size_t n );//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
-			const Edge& getEdge( size_t n ) const;//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+			Edge& getEdge( size_t n );//Get the edge at index n. The range for n is from 0 to getNumEdges()-1, inclusive.
+			const Edge& getEdge( size_t n ) const;//Get the edge at index n. The range for n is from 0 to getNumEdges()-1, inclusive.
 			void setID( int newID );//Sets the ID to the new value.
 			int getID() const;//Returns the ID;
 			void setValue( T newValue );//Sets the value to the new one.
@@ -56,12 +56,12 @@ namespace Graph
 	}
 
 	template <class T> Edge& Vertex<T>::getEdge( size_t n )
-	{//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+	{//Get the edge at index n. The range for n is from 0 to getNumEdges()-1, inclusive.
 		return edges.at( n );
 	}
 
 	template <class T> const Edge& Vertex<T>::getEdge( size_t n ) const
-	{//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+	{//Get the edge at index n. The range for n is from 0 to getNumEdges()-1, inclusive.
 		return edges.at( n );
 	}
 
