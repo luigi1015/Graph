@@ -75,16 +75,19 @@ class VertexTest : public CppUnit::TestCase
 			//Verfiy the edge has been added.
 			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
 			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getStartVertex() == 1 );
+			CPPUNIT_ASSERT( v.getEdge(0).getEndVertex() == 2 );
 
 			//Change the edge.
-			//v.getEdge(0).setWeight(2);
-			v.changeEdgeWeight( 0, 2 );
+			v.getEdge(0).setWeight(2);
+			//v.changeEdgeWeight( 0, 2 );
+			v.getEdge(0).setEndVertex(3);
 			
 			//Verfiy the edge has been changed.
 			CPPUNIT_ASSERT( v.getNumEdges() == 1 );
 			CPPUNIT_ASSERT( v.getEdge(0).getWeight() == 2 );
 			CPPUNIT_ASSERT( v.getEdge(0).getStartVertex() == 1 );
-			CPPUNIT_ASSERT( v.getEdge(0).getEndVertex() == 2 );
+			CPPUNIT_ASSERT( v.getEdge(0).getEndVertex() == 3 );
 		}
 
 		void testClearVertexEdges()

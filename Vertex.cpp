@@ -24,13 +24,14 @@ namespace Graph
 			void addEdge( Edge newEdge );//Add an edge to the list.
 			void clearEdges();//Clears all the edges.
 			size_t getNumEdges() const;//Return the number of edges in the list.
-			Edge getEdge( size_t n ) const;//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+			Edge& getEdge( size_t n );//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+			const Edge& getEdge( size_t n ) const;//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
 			void setID( int newID );//Sets the ID to the new value.
 			int getID() const;//Returns the ID;
 			void setValue( T newValue );//Sets the value to the new one.
 			T getValue() const;//Returns the value.
 			//template <class Y> friend std::ostream& operator<<(std::ostream &out, const Vertex<Y> &v);//For stream output.
-			void changeEdgeWeight( size_t n, int newWeight );//Change the weight of the edge at intex n. The range for n is from 0 to getNumEdges(), inclusive.
+			//void changeEdgeWeight( size_t n, int newWeight );//Change the weight of the edge at intex n. The range for n is from 0 to getNumEdges(), inclusive.
 	};
 
 	template <class T> Vertex<T>::Vertex( int newID, T newValue )
@@ -54,7 +55,12 @@ namespace Graph
 		return edges.size();
 	}
 
-	template <class T> Edge Vertex<T>::getEdge( size_t n ) const
+	template <class T> Edge& Vertex<T>::getEdge( size_t n )
+	{//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
+		return edges.at( n );
+	}
+
+	template <class T> const Edge& Vertex<T>::getEdge( size_t n ) const
 	{//Get the edge at index n. The range for n is from 0 to getNumEdges(), inclusive.
 		return edges.at( n );
 	}
@@ -79,10 +85,12 @@ namespace Graph
 		return value;
 	}
 
+/*
 	template <class T> void Vertex<T>::changeEdgeWeight( size_t n, int newWeight )
 	{//Change the weight of the edge at intex n. The range for n is from 0 to getNumEdges(), inclusive.
 		edges.at(n).setWeight( newWeight );
 	}
+*/
 }
 
 template <class T> std::ostream& operator<<(std::ostream& out, const Graph::Vertex<T>& v)
