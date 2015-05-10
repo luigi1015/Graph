@@ -20,8 +20,6 @@ template <class T> std::vector< Graph::Vertex<BreadthFirstTreeInfo> > breadthFir
 	std::vector< Graph::Vertex<BreadthFirstTreeInfo> > breadthFirstTree;
 	std::queue< Graph::Vertex<T> > grayList;
 
-	std::cout << "Test 0" << std::endl;
-
 	for( int i = 0; i < graph.size(); i++ )
 	{
 		if( i == sourceVertexIndex )
@@ -52,35 +50,25 @@ template <class T> std::vector< Graph::Vertex<BreadthFirstTreeInfo> > breadthFir
 		}
 	}
 
-	std::cout << "Test 1" << std::endl;
-
 	grayList.push( graph.at(sourceVertexIndex) );
-
-	std::cout << "Test 2" << std::endl;
 
 	while( !(grayList.empty()) )
 	{
 		Graph::Vertex<T> newVertex = grayList.front();
 		grayList.pop();
 
-	std::cout << "Test 3" << std::endl;
-	std::cout << "ID: " << newVertex.getID() << " Num Edges: " << newVertex.getNumEdges() << std::endl;
-
+		//std::cout << "ID: " << newVertex.getID() << " Num Edges: " << newVertex.getNumEdges() << std::endl;
 
 		for( int i = 0; i < newVertex.getNumEdges(); i++ )
 		{
-	std::cout << "Test 4, i=" << i << " End Vertex = " << newVertex.getEdge(i).getEndVertex() << std::endl;
 
 			if( colors.at(newVertex.getEdge(i).getEndVertex()) == BFSWhite )
 			{
-	std::cout << "Test 5" << std::endl;
 
 				colors.at(newVertex.getEdge(i).getEndVertex()) = BFSGray;
 				distances.at(newVertex.getEdge(i).getEndVertex()) = distances.at(newVertex.getID()) + 1;
 				predecessors.at(newVertex.getEdge(i).getEndVertex()) = newVertex.getID();
 				grayList.push( graph.at(newVertex.getEdge(i).getEndVertex()) );
-
-	std::cout << "Test 6" << std::endl;
 
 				BreadthFirstTreeInfo newBFSInfo;
 				newBFSInfo.distance = distances.at(newVertex.getEdge(i).getEndVertex());
@@ -93,9 +81,6 @@ template <class T> std::vector< Graph::Vertex<BreadthFirstTreeInfo> > breadthFir
 			}
 		}
 
-	std::cout << "Test 7" << std::endl;
-
-		
 		colors.at( newVertex.getID() ) = BFSBlack;
 	}
 	
