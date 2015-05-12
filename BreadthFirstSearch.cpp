@@ -57,8 +57,6 @@ template <class T> std::vector< Graph::Vertex<BreadthFirstTreeInfo> > breadthFir
 		Graph::Vertex<T> newVertex = grayList.front();
 		grayList.pop();
 
-		//std::cout << "ID: " << newVertex.getID() << " Num Edges: " << newVertex.getNumEdges() << std::endl;
-
 		for( int i = 0; i < newVertex.getNumEdges(); i++ )
 		{
 
