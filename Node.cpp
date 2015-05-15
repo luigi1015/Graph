@@ -21,3 +21,10 @@ namespace Graph
 }
 */
 #include "Node.h"
+
+namespace Graph
+{
+	Node::Node()
+	{
+	}
+}
