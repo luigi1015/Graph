@@ -27,4 +27,8 @@ namespace Graph
 	Node::Node()
 	{
 	}
+
+	int Node::size() const
+	{//Return the size.
+	}
 }
