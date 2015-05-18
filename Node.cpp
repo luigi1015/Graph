@@ -31,4 +31,8 @@ namespace Graph
 	int Node::size() const
 	{//Return the size.
 	}
+
+	template <class Key, Value> Value Node::get( Key getKey )
+	{
+	}
 }
