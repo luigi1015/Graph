@@ -35,4 +35,8 @@ namespace Graph
 	template <class Key, Value> Value Node::get( Key getKey )
 	{
 	}
+
+	template <class Key, Value> void put( Key newKey, Value newValue )
+	{
+	}
 }
