@@ -21,4 +21,8 @@ namespace Graph
 	int BST::size()
 	{
 	}
+
+	template <class Key, Value> Value BST::get( Key getKey )
+	{
+	}
 }
