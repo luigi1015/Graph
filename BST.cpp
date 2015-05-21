@@ -18,4 +18,7 @@ namespace Graph
 
 namespace Graph
 {
+	int BST::size()
+	{
+	}
 }
