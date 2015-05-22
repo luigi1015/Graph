@@ -19,6 +19,9 @@ EdgeTest: Edge.h Edge.cpp Edge.o EdgeTest.cpp
 Graph.o: Graph.cpp
 	g++ -g -Wall -c Graph.cpp
 
+BST.o: BST.cpp
+	g++ -g -Wall -c BST.cpp
+
 GraphTest: Graph.cpp Graph.o Vertex.o GraphTest.cpp Edge.o
 	g++ -g -Wall -o GraphTest GraphTest.cpp Graph.o Edge.o Vertex.o -lcppunit
 

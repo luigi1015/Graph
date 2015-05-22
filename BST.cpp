@@ -1,5 +1,6 @@
 #include <vector>
 #include <ostream>
+#include "BST.h"
 /*
 namespace Graph
 {
@@ -22,7 +23,7 @@ namespace Graph
 	{
 	}
 
-	template <class Key, Value> Value BST::get( Key getKey )
+	template <class Key, class Value> Value BST::get( Key getKey )
 	{
 	}
 }
