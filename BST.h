@@ -3,10 +3,11 @@
 
 #include <vector>
 #include <ostream>
+#include "Node.h"
 
 namespace Graph
 {
-	template <class Key, Value> class BST
+	template <class Key, class Value> class BST
 	{//A Binary Search Tree.
 		private:
 			Node root;
