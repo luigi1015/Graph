@@ -32,11 +32,11 @@ namespace Graph
 	{//Return the size.
 	}
 
-	template <class Key, Value> Value Node::get( Key getKey )
+	template <typename Key, typename Value> Value Node::get( Key getKey )
 	{
 	}
 
-	template <class Key, Value> void put( Key newKey, Value newValue )
+	template <typename Key, typename Value> void put( Key newKey, Value newValue )
 	{
 	}
 }

@@ -7,10 +7,10 @@
 
 namespace Graph
 {
-	template <class Key, class Value> class BST
+	template <typename Key, typename Value> class BST
 	{//A Binary Search Tree.
 		private:
-			Node root;
+			Node<Key, Value> root;
 
 		public:
 			int size() const;//Return the size.

@@ -6,7 +6,7 @@
 
 namespace Graph
 {
-	template <class Key, Value> class Node
+	template <typename Key, typename Value> class Node
 	{//A single edge of a graph.
 		private:
 			Key key;
