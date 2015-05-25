@@ -26,4 +26,8 @@ namespace Graph
 	template <typename Key, typename Value> Value BST<Key, Value>::get( Key getKey )
 	{
 	}
+
+	template <typename Key, typename Value> void BST<Key, Value>::put( Key newKey, Value newValue )
+	{
+	}
 }
