@@ -28,6 +28,10 @@ namespace Graph
 	{
 	}
 
+	Node::Node( Key newKey, Value newValue, int newN )
+	{//Constructor with values.
+	}
+
 	int Node::size() const
 	{//Return the size.
 	}
