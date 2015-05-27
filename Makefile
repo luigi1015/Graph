@@ -22,6 +22,9 @@ Graph.o: Graph.cpp
 BST.o: BST.cpp
 	g++ -g -Wall -c BST.cpp
 
+Node.o: Node.cpp
+	g++ -g -Wall -c Node.cpp
+
 GraphTest: Graph.cpp Graph.o Vertex.o GraphTest.cpp Edge.o
 	g++ -g -Wall -o GraphTest GraphTest.cpp Graph.o Edge.o Vertex.o -lcppunit
 
