@@ -16,11 +16,11 @@ Edge.o: Edge.h Edge.cpp
 EdgeTest: Edge.h Edge.cpp Edge.o EdgeTest.cpp
 	g++ -g -Wall -o EdgeTest EdgeTest.cpp Edge.o -lcppunit
 
-Graph.o: Graph.cpp
-	g++ -g -Wall -c Graph.cpp
-
 BST.o: BST.cpp
 	g++ -g -Wall -c BST.cpp
+
+Graph.o: Graph.cpp
+	g++ -g -Wall -c Graph.cpp
 
 Node.o: Node.cpp
 	g++ -g -Wall -c Node.cpp
