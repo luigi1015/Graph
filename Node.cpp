@@ -24,11 +24,11 @@ namespace Graph
 
 namespace Graph
 {
-	Node::Node()
+	template<typename Key, typename Value> Node<Key, Value>::Node()
 	{
 	}
 
-	Node::Node( Key newKey, Value newValue, int newN )
+	template<typename Key, typename Value> Node<Key, Value>::Node( Key newKey, Value newValue, int newN )
 	{//Constructor with values.
 	}
 
