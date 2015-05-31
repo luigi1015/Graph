@@ -4,7 +4,7 @@
 /*
 namespace Graph
 {
-	template <class Key, Value> class BST
+	template <typename Key, typename Value> class BST
 	{//A Binary Search Tree.
 		private:
 			Node<Key, Value> root;
