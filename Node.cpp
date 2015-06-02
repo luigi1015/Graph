@@ -37,7 +37,7 @@ namespace Graph
 	}
 
 	template <typename Key, typename Value> Value Node::get( Key getKey )
-	{
+	{//Return the value of the node with a given key.
 	}
 
 	template <typename Key, typename Value> void put( Key newKey, Value newValue )
