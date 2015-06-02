@@ -13,7 +13,7 @@ namespace Graph
 			int N;
 
 		public:
-			Node( Key newKey, Value newValue, int newN );//Constructor with values.
+			//Node( Key newKey, Value newValue, int newN );//Constructor with values.
 			int size() const;//Return the size.
 			Value get( Key getKey );
 			void put( Key newKey, Value newValue );
@@ -28,9 +28,11 @@ namespace Graph
 	{
 	}
 
+/*
 	template<typename Key, typename Value> Node<Key, Value>::Node( Key newKey, Value newValue, int newN )
 	{//Constructor with values.
 	}
+*/
 
 	int Node::size() const
 	{//Return the size.
