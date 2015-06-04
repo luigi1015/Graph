@@ -38,7 +38,7 @@ namespace Graph
 	{//Return the size.
 	}
 
-	template <typename Key, typename Value> Value Node::get( Key getKey )
+	template <typename Key, typename Value> Value Node<Key, Value>::get( Key getKey )
 	{//Return the value of the node with a given key.
 	}
 
