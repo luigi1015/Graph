@@ -28,12 +28,6 @@ namespace Graph
 	{
 	}
 
-/*
-	template<typename Key, typename Value> Node<Key, Value>::Node( Key newKey, Value newValue, int newN )
-	{//Constructor with values.
-	}
-*/
-
 	int Node::size() const
 	{//Return the size.
 	}
