@@ -36,6 +36,6 @@ namespace Graph
 	}
 
 	template <typename Key, typename Value> void put( Key newKey, Value newValue )
-	{
+	{//Create a node in the tree with thespecified key and value.
 	}
 }
