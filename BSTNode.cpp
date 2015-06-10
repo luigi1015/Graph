@@ -24,7 +24,7 @@ namespace Graph
 namespace Graph
 {
 	template<typename Key, typename Value> BSTNode<Key, Value>::BSTNode()
-	{
+	{//COnstructor
 	}
 
 	int BSTNode::size() const
