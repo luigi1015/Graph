@@ -15,7 +15,6 @@ namespace Graph
 			int N;
 
 		public:
-			//Node( Key newKey, Value newValue, int newN );//Constructor with values.
 			BSTNode();
 			int size() const;//Return the size.
 			Value get( Key getKey );
