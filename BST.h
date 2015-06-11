@@ -14,6 +14,7 @@ namespace Graph
 
 		public:
 			int size() const;//Return the size.
+			int size(Node node) const;//Return the size at node node.
 			Value get( Key getKey );
 			void put( Key newKey, Value newValue );
 	};
