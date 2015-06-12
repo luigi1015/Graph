@@ -16,7 +16,6 @@ namespace Graph
 
 		public:
 			BSTNode();//Constructor
-			int size() const;//Return the size.
 			Value get( Key getKey );
 			void put( Key newKey, Value newValue );
 	};
