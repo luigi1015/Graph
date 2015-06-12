@@ -13,9 +13,10 @@ namespace Graph
 			Node<Key, Value> root;
 
 		public:
-			int size() const;//Return the size.
-			int size(Node node) const;//Return the size at node node.
-			Value get( Key getKey );
+			int size() const;//Returns the size of the tree.
+			int size(Node node) const;//Returns the size at node node.
+			Value get( Key getKey );//Returns the value of the node with a specified key.
+			Value get( Node subtreeNode, Key getKey );//Returns the value of the node with a specified key that is within the subtree rooted at subtreeNode. Returns null if the node isn't found.
 			void put( Key newKey, Value newValue );
 	};
 }
