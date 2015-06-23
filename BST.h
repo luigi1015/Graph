@@ -11,12 +11,13 @@ namespace Graph
 	{//A Binary Search Tree.
 		private:
 			Node<Key, Value> root;
+			Value get( Node subtreeNode, Key getKey );//Returns the value of the node with a specified key that is within the subtree rooted at subtreeNode. Returns null if the node isn't found.
+			Node put( Node rootNode, Key newKey, Value newValue );
 
 		public:
 			int size() const;//Returns the size of the tree.
 			int size(Node node) const;//Returns the size at node node.
 			Value get( Key getKey );//Returns the value of the node with a specified key.
-			Value get( Node subtreeNode, Key getKey );//Returns the value of the node with a specified key that is within the subtree rooted at subtreeNode. Returns null if the node isn't found.
 			void put( Key newKey, Value newValue );
 	};
 }

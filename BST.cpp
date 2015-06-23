@@ -65,6 +65,11 @@ namespace Graph
 	}
 
 	template <typename Key, typename Value> void BST<Key, Value>::put( Key newKey, Value newValue )
-	{
+	{//Search for the key. If there is a node with the key, update the value. If not, add it to the tree.
+		root = put(root, newKey, newValue);
+	}
+
+	template <typename Key, typename Value> Node BST<Key, Value>::put( Node rootNode, Key newKey, Value newValue )
+	{//If a node with newKey exists in the tree rooted at rootNode, change the value of the node. If not, add it to the tree.
 	}
 }
