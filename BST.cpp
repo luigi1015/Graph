@@ -71,5 +71,27 @@ namespace Graph
 
 	template <typename Key, typename Value> Node BST<Key, Value>::put( Node rootNode, Key newKey, Value newValue )
 	{//If a node with newKey exists in the tree rooted at rootNode, change the value of the node. If not, add it to the tree.
+		if( newKey == null )
+		{
+			return new Node( newKey, newValue, 1 );
+		}
+
+		int compare = newKey.compareTo( rootNode.key );
+		if( compare < 0 )
+		{
+			rootNode.left = put( rootNode.left, newKey, newValue );
+		}
+		else if( compare > 0 )
+		{
+			rootNode.right = put( rootNode.right, newKey, newValue );
+		}
+		else
+		{
+			rootNode.value = newValue;
+		}
+
+		rootNode.N = size(rootNode.left) + size(rootNode.right) + 1;
+
+		return rootNode;
 	}
 }
