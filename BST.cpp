@@ -8,12 +8,16 @@ namespace Graph
 	{//A Binary Search Tree.
 		private:
 			Node<Key, Value> root;
+			Value get( Node subtreeNode, Key getKey );//Returns the value of the node with a specified key that is within the subtree rooted at subtreeNode. Returns null if the node isn't found.
+			Node put( Node rootNode, Key newKey, Value newValue );
+			Node min( Node minNode );
 
 		public:
-			int size() const;//Return the size of the tree.
-			int size(Node node) const;//Return the size at node node.
-			Value get( Key getKey );
+			int size() const;//Returns the size of the tree.
+			int size(Node node) const;//Returns the size at node node.
+			Value get( Key getKey );//Returns the value of the node with a specified key.
 			void put( Key newKey, Value newValue );
+			Key min();
 	};
 }
 */
@@ -93,5 +97,22 @@ namespace Graph
 		rootNode.N = size(rootNode.left) + size(rootNode.right) + 1;
 
 		return rootNode;
+	}
+
+	template <typename Key, typename Value> Key BST<Key, Value>::min()
+	{
+		return min(root).key;
+	}
+
+	template <typename Key, typename Value> void BST<Key, Value>::min( Node rootNode )
+	{
+		if( rootNode.left == null )
+		{
+			return rootNode;
+		}
+		else
+		{
+			return min( rootNode.left );
+		}
 	}
 }
