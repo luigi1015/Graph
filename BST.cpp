@@ -120,9 +120,41 @@ namespace Graph
 
 	template <typename Key, typename Value> Key BST<Key, Value>::floor( Node rootNode, Key key )
 	{
+		if( rootNode == null )
+		{
+			return null;
+		}
+		int compare = key.compareTo( rootNode.key );
+		if( compare == 0 )
+		{
+			return rootNode;
+		}
+		else if( compare < 0 )
+		{
+			return floor( rootNode.left, key );
+		}
+		
+		Node t = floor( rootNode.right, key );
+		if( t != null )
+		{
+			return t;
+		}
+		else
+		{
+			return rootNode;
+		}
 	}
 
 	template <typename Key, typename Value> BST<Key, Value>::Key floor( Key key )
 	{
+		Node rootNode = floor( root, key );
+		if( rootNode == null )
+		{
+			return null;
+		}
+		else
+		{
+			return rootNode.key;
+		}
 	}
 }
