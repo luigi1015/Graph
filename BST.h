@@ -15,6 +15,7 @@ namespace Graph
 			Node put( Node rootNode, Key newKey, Value newValue );
 			Node min( Node minNode );
 			Key floor( Node rootNode, Key key );
+			Key select( int n );
 
 		public:
 			int size() const;//Returns the size of the tree.
