@@ -21,6 +21,7 @@ namespace Graph
 			void put( Key newKey, Value newValue );
 			Key min();
 			Key floor( Key key );
+			Key floor( Node rootNode, Key key );
 	};
 }
 */
@@ -160,6 +161,10 @@ namespace Graph
 	}
 
 	template <typename Key, typename Value> BST<Key, Value>::Key select( int n )
+	{
+	}
+
+	template <typename Key, typename Value> BST<Key, Value>::Key select( Node rootNode, int n )
 	{
 	}
 }

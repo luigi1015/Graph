@@ -24,6 +24,7 @@ namespace Graph
 			void put( Key newKey, Value newValue );
 			Key min();
 			Key floor( Key key );
+			Key floor( Node rootNode, Key key );
 	};
 }
 
