@@ -18,7 +18,7 @@ namespace Graph
 			int size() const;//Returns the size of the tree.
 			int size(Node node) const;//Returns the size at node node.
 			Value get( Key getKey );//Returns the value of the node with a specified key.
-			void put( Key newKey, Value newValue );
+			void put( Key newKey, Value newValue );//Puts the specified node in the tree.
 			Key min();
 			Key floor( Key key );
 			Key floor( Node rootNode, Key key );
