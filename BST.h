@@ -23,8 +23,7 @@ namespace Graph
 			Value get( Key getKey );//Returns the value of the node with a specified key.
 			void put( Key newKey, Value newValue );//Puts the specified node in the tree.
 			Key min();
-			Key floor( Key key );
-			Key floor( Node rootNode, Key key );
+			Key floor( Key key );//Returns the largest Key less than or equal to key.
 	};
 }
 
