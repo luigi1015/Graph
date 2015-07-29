@@ -11,7 +11,7 @@ namespace Graph
 			Value get( Node subtreeNode, Key getKey );//Returns the value of the node with a specified key that is within the subtree rooted at subtreeNode. Returns null if the node isn't found.
 			Node put( Node rootNode, Key newKey, Value newValue );
 			Node min( Node minNode );
-			Key floor( Node rootNode, Key key );
+			Key floor( Node rootNode, Key key );//Returns the largest Key less than or equal to key in the tree rooted at rootNode.
 			Key select( int n );
 
 		public:
