@@ -15,7 +15,7 @@ namespace Graph
 			Node put( Node rootNode, Key newKey, Value newValue );
 			Node min( Node minNode );
 			Key floor( Node rootNode, Key key );
-			Key select( int n );
+			Key select( Node rootNode, int n );
 
 		public:
 			int size() const;//Returns the size of the tree.
@@ -24,6 +24,7 @@ namespace Graph
 			void put( Key newKey, Value newValue );//Puts the specified node in the tree.
 			Key min();
 			Key floor( Key key );//Returns the largest Key less than or equal to key.
+			Key select( int n );
 	};
 }
 
