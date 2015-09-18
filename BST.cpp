@@ -170,6 +170,6 @@ namespace Graph
 		{
 			return 0;
 		}
-		
+		int t = size(x.left);
 	}
 }
