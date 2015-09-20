@@ -170,6 +170,10 @@ namespace Graph
 		{
 			return 0;
 		}
-		int t = size(x.left);
+		int t = size( x.left );
+		if( t < n )
+		{
+			return select( x.left, n );
+		}
 	}
 }
