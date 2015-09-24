@@ -177,7 +177,7 @@ namespace Graph
 		}
 		else if (t < n )
 		{
-			//Add here.
+			return select( x.right, n-t-1 );
 		}
 	}
 }
