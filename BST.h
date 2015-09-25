@@ -24,7 +24,7 @@ namespace Graph
 			void put( Key newKey, Value newValue );//Puts the specified node in the tree.
 			Key min();
 			Key floor( Key key );//Returns the largest Key less than or equal to key.
-			Key select( int n );
+			Key select( int n );//Returns the key at n
 	};
 }
 
